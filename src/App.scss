@@ -1,0 +1,42 @@
+@import "~gumgum-design/styles/scss/index";
+
+.App {
+  background: red;
+}
+
+.gds-search__typeahead {
+  background: #fff;
+  box-shadow: inset -1px -1px 0px 0 #c4c4c4, inset 1px -1px 0px 0 #c4c4c4;
+}
+
+.gds-search__typeahead-item {
+  background: none;
+  color: inherit;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex: auto;
+  align-items: center;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.gds-search__result-icon {
+  font-size: 14px;
+  padding-right: 8px;
+  text-align: center;
+}
+.gds-search__result-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gds-search__result-type {
+  .gds-badge {
+    white-space: nowrap;
+  }
+}

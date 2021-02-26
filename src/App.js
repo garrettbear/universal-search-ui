@@ -93,6 +93,21 @@ function App() {
               </li>
             </ul>
             <li class="gds-search__typeahead-item gds-search__typeahead-item--filter">
+              <div className="gds-search__result-name">
+                2019 Honda Summer Sales Event
+              </div>
+            </li>
+            <li class="gds-search__typeahead-item gds-search__typeahead-item--filter">
+              <div className="gds-search__result-name">
+                2020 Weirdest Summer Ever
+              </div>
+            </li>
+            <li class="gds-search__typeahead-item gds-search__typeahead-item--filter">
+              <div className="gds-search__result-name">
+                In Screen LA Summer Weather
+              </div>
+            </li>
+            <li class="gds-search__typeahead-item gds-search__typeahead-item--filter">
               <div className="gds-search__result-icon">
                 <i class="fas fa-fw fa-search"></i>
               </div>

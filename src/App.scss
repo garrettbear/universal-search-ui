@@ -32,7 +32,10 @@
 }
 
 //new classes (not in DS)
-.gds-search__filter-items .gds-search__typeahead-item:last-child {
+
+.gds-search__filter-items {
+  max-height: 197px;
+  overflow-y: scroll;
   border-bottom: 1px solid #c4c4c4;
 }
 

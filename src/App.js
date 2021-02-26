@@ -2,7 +2,11 @@ import { useState } from "react";
 import "./App.scss";
 
 function App() {
-  const [filtered, setFiltered] = useState(false);
+  const [inputValue, setInputValue] = useState("Summ");
+  const addFilter = (type) => {
+    let currentValue = inputValue;
+    setInputValue(`${type}:Summer ${currentValue}`);
+  };
   return (
     <div className="App">
       <div class="gds-search gds-search--shown">
@@ -13,119 +17,93 @@ function App() {
                 class="gds-form-group__text-input -bor-rad-b-0"
                 type="text"
                 placeholder="Search..."
-                value="Summer"
+                onChange={(e) => setInputValue(e.target.value)}
+                value={inputValue}
               />
-              {filtered && (
-                <span class="gds-badge -pos-abs" style={{ top: 15, right: 10 }}>
-                  In this campaign
-                </span>
-              )}
             </div>
           </div>
-          {!filtered ? (
-            <ul class="gds-search__typeahead">
-              <ul class="gds-search__filter-items">
-                <li
-                  class="gds-search__typeahead-item"
-                  onClick={() => setFiltered(!filtered)}
-                >
-                  <div className="gds-search__result-icon">
-                    <i class="fas fa-fw fa-search"></i>
-                  </div>
-                  <div className="gds-search__result-name">Summer</div>
-                  <div className="gds-search__result-type">
-                    <span class="gds-badge">In this campaign</span>
-                  </div>
-                </li>
-                <li class="gds-search__typeahead-item">
-                  <div className="gds-search__result-icon">
-                    <i class="fas fa-fw fa-search"></i>
-                  </div>
-                  <div className="gds-search__result-name">Summer</div>
-                  <div className="gds-search__result-type">
-                    <span class="gds-badge">In this advertiser</span>
-                  </div>
-                </li>
-              </ul>
+
+          <ul class="gds-search__typeahead">
+            <ul class="gds-search__filter-items">
               <li
-                class="gds-search__typeahead-item gds-search__typeahead-item--filter"
-                onClick={() => setFiltered(!filtered)}
+                class="gds-search__typeahead-item"
+                onClick={() => addFilter("Advertiser")}
               >
                 <div className="gds-search__result-icon">
-                  <i class="fas fa-fw fa-search"></i>
+                  <i class="fas fa-fw fa-user"></i>
                 </div>
                 <div className="gds-search__result-name">Summer</div>
                 <div className="gds-search__result-type">
-                  <span class="gds-badge">In this campaign</span>
+                  <span class="gds-badge">Advertiser</span>
                 </div>
               </li>
-              <li class="gds-search__typeahead-item gds-search__typeahead-item--filter">
+              <li class="gds-search__typeahead-item">
                 <div className="gds-search__result-icon">
-                  <i class="fas fa-fw fa-search"></i>
+                  <i class="fas fa-fw fa-users"></i>
                 </div>
                 <div className="gds-search__result-name">Summer</div>
                 <div className="gds-search__result-type">
-                  <span class="gds-badge">In this advertiser</span>
+                  <span class="gds-badge">Agency</span>
                 </div>
               </li>
               <li class="gds-search__typeahead-item">
-                <div className="gds-search__result-name">
-                  Honda Summer Sale 2019
-                </div>
-                <div className="gds-search__result-type">
-                  <span class="gds-badge gds-badge--dark -color-bg-dk-5">
-                    Campaign
-                  </span>
-                </div>
-              </li>
-
-              <li class="gds-search__typeahead-item">
-                <div className="gds-search__result-name">
-                  In-Screen Display - Flex - 320x50 - Mobile - Summer Breakfast
-                </div>
-                <div className="gds-search__result-type">
-                  <span class="gds-badge gds-badge--dark -color-bg-dk-5">
-                    Ad Line
-                  </span>
-                </div>
-              </li>
-            </ul>
-          ) : (
-            <ul class="gds-search__typeahead">
-              <li
-                class="gds-search__typeahead-item gds-search__typeahead-item--back"
-                onClick={() => setFiltered(!filtered)}
-              >
                 <div className="gds-search__result-icon">
-                  <i class="fas fa-fw fa-arrow-left"></i>
+                  <i class="fas fa-fw fa-tag"></i>
                 </div>
-                <div className="gds-search__result-name">
-                  Back to search all
+                <div className="gds-search__result-name">Summer</div>
+                <div className="gds-search__result-type">
+                  <span class="gds-badge">Tag</span>
                 </div>
               </li>
               <li class="gds-search__typeahead-item">
-                <div className="gds-search__result-name">
-                  Honda Summer In-Image
+                <div className="gds-search__result-icon">
+                  <i class="fas fa-fw fa-bullhorn"></i>
                 </div>
+                <div className="gds-search__result-name">Summer</div>
                 <div className="gds-search__result-type">
-                  <span class="gds-badge gds-badge--dark -color-bg-dk-5">
-                    Ad Line
-                  </span>
+                  <span class="gds-badge">Campaign Type</span>
                 </div>
               </li>
-
               <li class="gds-search__typeahead-item">
-                <div className="gds-search__result-name">
-                  In-Screen Display - Flex - 320x50 - Mobile - Summer
+                <div className="gds-search__result-icon">
+                  <i class="fas fa-fw fa-ad"></i>
                 </div>
+                <div className="gds-search__result-name">Summer</div>
                 <div className="gds-search__result-type">
-                  <span class="gds-badge gds-badge--dark -color-bg-dk-5">
-                    Ad Line
-                  </span>
+                  <span class="gds-badge">Unit Type</span>
+                </div>
+              </li>
+              <li class="gds-search__typeahead-item">
+                <div className="gds-search__result-icon">
+                  <i class="fas fa-fw fa-industry"></i>
+                </div>
+                <div className="gds-search__result-name">Summer</div>
+                <div className="gds-search__result-type">
+                  <span class="gds-badge">Industry</span>
+                </div>
+              </li>
+              <li class="gds-search__typeahead-item">
+                <div className="gds-search__result-icon">
+                  <i class="fas fa-fw fa-briefcase"></i>
+                </div>
+                <div className="gds-search__result-name">Summer</div>
+                <div className="gds-search__result-type">
+                  <span class="gds-badge">Business Unit</span>
                 </div>
               </li>
             </ul>
-          )}
+            <li class="gds-search__typeahead-item gds-search__typeahead-item--filter">
+              <div className="gds-search__result-icon">
+                <i class="fas fa-fw fa-search"></i>
+              </div>
+              <div className="gds-search__result-name">Summer</div>
+              <div className="gds-search__result-type">
+                <span class="gds-badge gds-badge--dark -color-bg-dk-5">
+                  enter ⏎
+                </span>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

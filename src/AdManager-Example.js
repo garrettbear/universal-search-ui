@@ -14,6 +14,7 @@ function App() {
                 type="text"
                 placeholder="Search..."
                 value="Summer"
+                data-gds-search-input="0"
               />
               {filtered && (
                 <span class="gds-badge -pos-abs" style={{ top: 15, right: 10 }}>
@@ -24,31 +25,9 @@ function App() {
           </div>
           {!filtered ? (
             <ul class="gds-search__typeahead">
-              <ul class="gds-search__filter-items">
-                <li
-                  class="gds-search__typeahead-item"
-                  onClick={() => setFiltered(!filtered)}
-                >
-                  <div className="gds-search__result-icon">
-                    <i class="fas fa-fw fa-search"></i>
-                  </div>
-                  <div className="gds-search__result-name">Summer</div>
-                  <div className="gds-search__result-type">
-                    <span class="gds-badge">In this campaign</span>
-                  </div>
-                </li>
-                <li class="gds-search__typeahead-item">
-                  <div className="gds-search__result-icon">
-                    <i class="fas fa-fw fa-search"></i>
-                  </div>
-                  <div className="gds-search__result-name">Summer</div>
-                  <div className="gds-search__result-type">
-                    <span class="gds-badge">In this advertiser</span>
-                  </div>
-                </li>
-              </ul>
               <li
-                class="gds-search__typeahead-item gds-search__typeahead-item--filter"
+                class="gds-search__typeahead-item"
+                gds-typeahead-index="0"
                 onClick={() => setFiltered(!filtered)}
               >
                 <div className="gds-search__result-icon">
@@ -59,7 +38,7 @@ function App() {
                   <span class="gds-badge">In this campaign</span>
                 </div>
               </li>
-              <li class="gds-search__typeahead-item gds-search__typeahead-item--filter">
+              <li class="gds-search__typeahead-item" gds-typeahead-index="1">
                 <div className="gds-search__result-icon">
                   <i class="fas fa-fw fa-search"></i>
                 </div>
@@ -68,7 +47,7 @@ function App() {
                   <span class="gds-badge">In this advertiser</span>
                 </div>
               </li>
-              <li class="gds-search__typeahead-item">
+              <li class="gds-search__typeahead-item" gds-typeahead-index="2">
                 <div className="gds-search__result-name">
                   Honda Summer Sale 2019
                 </div>
@@ -79,7 +58,7 @@ function App() {
                 </div>
               </li>
 
-              <li class="gds-search__typeahead-item">
+              <li class="gds-search__typeahead-item" gds-typeahead-index="2">
                 <div className="gds-search__result-name">
                   In-Screen Display - Flex - 320x50 - Mobile - Summer Breakfast
                 </div>
@@ -94,6 +73,7 @@ function App() {
             <ul class="gds-search__typeahead">
               <li
                 class="gds-search__typeahead-item gds-search__typeahead-item--back"
+                gds-typeahead-index="0"
                 onClick={() => setFiltered(!filtered)}
               >
                 <div className="gds-search__result-icon">
@@ -103,7 +83,7 @@ function App() {
                   Back to search all
                 </div>
               </li>
-              <li class="gds-search__typeahead-item">
+              <li class="gds-search__typeahead-item" gds-typeahead-index="2">
                 <div className="gds-search__result-name">
                   Honda Summer In-Image
                 </div>
@@ -114,7 +94,7 @@ function App() {
                 </div>
               </li>
 
-              <li class="gds-search__typeahead-item">
+              <li class="gds-search__typeahead-item" gds-typeahead-index="2">
                 <div className="gds-search__result-name">
                   In-Screen Display - Flex - 320x50 - Mobile - Summer
                 </div>

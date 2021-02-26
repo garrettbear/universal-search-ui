@@ -1,8 +1,16 @@
 @import "~gumgum-design/styles/scss/index";
 
 .App {
-  background: red;
+  background: #fff;
+  min-height: 100vh;
 }
+
+.gds-search__input-holder {
+  width: 800px;
+  margin-top: 10%;
+}
+
+//overrides
 
 .gds-search__typeahead {
   background: #fff;
@@ -21,6 +29,11 @@
   &:hover {
     color: white;
   }
+}
+
+//new classes (not in DS)
+.gds-search__filter-items .gds-search__typeahead-item:last-child {
+  border-bottom: 1px solid #c4c4c4;
 }
 
 .gds-search__result-icon {

@@ -5,7 +5,7 @@ function App() {
   const [inputValue, setInputValue] = useState("Summ");
   const addFilter = (type) => {
     let currentValue = inputValue;
-    setInputValue(`${type}:Summer ${currentValue}`);
+    setInputValue(`${type}:Summer Hot Show Q1 2021 ${currentValue}`);
   };
   return (
     <div className="App">
@@ -27,12 +27,23 @@ function App() {
             <ul class="gds-search__filter-items">
               <li
                 class="gds-search__typeahead-item"
-                onClick={() => addFilter("Advertiser")}
+                // onClick={() => addFilter("Advertiser")}
               >
                 <div className="gds-search__result-icon">
                   <i class="fas fa-fw fa-user"></i>
                 </div>
-                <div className="gds-search__result-name">Summer</div>
+                <div className="gds-search__result-name">
+                  Summer Hot Show Q1 2021
+                </div>
+                <div className="gds-search__result-type">
+                  <span class="gds-badge">Advertiser</span>
+                </div>
+              </li>
+              <li class="gds-search__typeahead-item">
+                <div className="gds-search__result-icon">
+                  <i class="fas fa-fw fa-user"></i>
+                </div>
+                <div className="gds-search__result-name">2023 Summer Jam</div>
                 <div className="gds-search__result-type">
                   <span class="gds-badge">Advertiser</span>
                 </div>
@@ -41,7 +52,7 @@ function App() {
                 <div className="gds-search__result-icon">
                   <i class="fas fa-fw fa-users"></i>
                 </div>
-                <div className="gds-search__result-name">Summer</div>
+                <div className="gds-search__result-name">72 &amp; Summer</div>
                 <div className="gds-search__result-type">
                   <span class="gds-badge">Agency</span>
                 </div>
@@ -50,7 +61,7 @@ function App() {
                 <div className="gds-search__result-icon">
                   <i class="fas fa-fw fa-tag"></i>
                 </div>
-                <div className="gds-search__result-name">Summer</div>
+                <div className="gds-search__result-name">Summer 2021</div>
                 <div className="gds-search__result-type">
                   <span class="gds-badge">Tag</span>
                 </div>

@@ -3,10 +3,10 @@ import "./App.scss";
 
 function App() {
   const [inputValue, setInputValue] = useState("Summ");
-  const addFilter = (type) => {
-    let currentValue = inputValue;
-    setInputValue(`${type}:Summer Hot Show Q1 2021 ${currentValue}`);
-  };
+  // const addFilter = (type) => {
+  //   let currentValue = inputValue;
+  //   setInputValue(`${type}:Summer Hot Show Q1 2021 ${currentValue}`);
+  // };
   return (
     <div className="App">
       <div class="gds-search gds-search--shown">
